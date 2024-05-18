@@ -66,23 +66,10 @@ namespace Sprout.Exam.WebApp.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Post(CreateEmployeeDto input)
+        public async Task<bool> Post(CreateEmployeeDto input)
         {
-           
-           var id = await Task.FromResult(StaticEmployees.ResultList.Max(m => m.Id) + 1);
-
-            StaticEmployees.ResultList.Add(new EmployeeDto
-            {
-                Birthdate = input.Birthdate.ToString("yyyy-MM-dd"),
-                FullName = input.FullName,
-                Id = id,
-                Tin = input.Tin,
-                TypeId = input.TypeId
-            });
-
-            return Created($"/api/employees/{id}", id);
+           return await Task.FromResult<bool>(this.employeeService.Add(input));
         }
-
 
         /// <summary>
         /// Refactor this method to go through proper layers and perform soft deletion of an employee to the DB.
