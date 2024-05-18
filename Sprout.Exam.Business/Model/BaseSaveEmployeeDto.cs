@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sprout.Exam.Business.DataTransferObjects
+namespace Sprout.Exam.Business.Model
 {
     public abstract class BaseSaveEmployeeDto
     {

@@ -5,8 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Sprout.Exam.Business.DataTransferObjects;
 using Sprout.Exam.Common.Enums;
+using Sprout.Exam.Business.Model;
+using Sprout.Exam.Business.BaseServices;
 
 namespace Sprout.Exam.WebApp.Controllers
 {
@@ -15,6 +16,12 @@ namespace Sprout.Exam.WebApp.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
+        private IEmployeeService employeeService;
+
+        public EmployeesController(EmployeeService employeeService)
+        {
+            this.employeeService = employeeService;
+        }
 
         /// <summary>
         /// Refactor this method to go through proper layers and fetch from the DB.
@@ -61,7 +68,7 @@ namespace Sprout.Exam.WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(CreateEmployeeDto input)
         {
-
+           
            var id = await Task.FromResult(StaticEmployees.ResultList.Max(m => m.Id) + 1);
 
             StaticEmployees.ResultList.Add(new EmployeeDto

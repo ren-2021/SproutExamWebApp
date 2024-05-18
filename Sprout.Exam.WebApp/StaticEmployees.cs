@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Sprout.Exam.Business.DataTransferObjects;
+using Sprout.Exam.Business.Model;
 
 namespace Sprout.Exam.WebApp
 {
