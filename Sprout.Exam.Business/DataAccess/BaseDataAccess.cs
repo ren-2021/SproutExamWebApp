@@ -16,8 +16,9 @@ namespace Sprout.Exam.Business.DataAccess
         }
         private IDataAccess dataAccess { get; set; }
         private IDLEmployee dlEmployee;
+        private IDataAccessFactory dataFactory;
 
-        public BaseDataAccess(IDataAccess pDataAccess, IDataAccessFactory dataFactory)
+        public BaseDataAccess(IDataAccess pDataAccess)
         {
             dataAccess = pDataAccess;
             dataFactory = new DataAccessFactory(dataAccess);

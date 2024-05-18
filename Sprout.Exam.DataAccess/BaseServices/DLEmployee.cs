@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Sprout.Exam.Business.DataAccess;
 using Sprout.Exam.Business.Model;
 using Sprout.Exam.DataAccess.BaseDataAccess;
 using System;
@@ -10,7 +11,7 @@ using System.Text;
 
 namespace Sprout.Exam.DataAccess.BaseServices
 {
-    public class DLEmployee : DLBaseDataAccess, IDLEmployee
+    public class DLEmployee : DLBaseDataAccess, IDataAccess, IDLEmployee
     {
         public bool AddEmployee(CreateEmployeeDto input)
         {

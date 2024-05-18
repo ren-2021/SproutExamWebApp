@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Sprout.Exam.Business.BaseServices
 {
-    public class EmployeeService : BaseDataAccess, IEmployeeService
+    public class Employee : BaseDataAccess, IEmployee
     {
-        public EmployeeService(IDataAccess pDataAccess, IDataAccessFactory dataFactory) : base(pDataAccess, dataFactory)
+        public Employee(IDataAccess pDataAccess) : base(pDataAccess)
         {
 
         }
