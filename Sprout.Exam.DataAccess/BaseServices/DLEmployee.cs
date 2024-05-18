@@ -26,7 +26,7 @@ namespace Sprout.Exam.DataAccess.BaseServices
                     parameters.Add("@Birthdate", input.Birthdate);
                     parameters.Add("@TypeId", input.TypeId);
                     parameters.Add("@IsSuccess", dbType: DbType.Boolean, direction: ParameterDirection.Output);
-                    connection.Execute("pr_AddEmployee", parameters, commandType: CommandType.StoredProcedure);
+                    connection.Execute("pr_CreateEmployee", parameters, commandType: CommandType.StoredProcedure);
                     IsSuccess = parameters.Get<bool>("@IsSuccess");
                 }
             }
@@ -45,7 +45,29 @@ namespace Sprout.Exam.DataAccess.BaseServices
 
         public bool UpdateEmployees(EditEmployeeDto input)
         {
-            throw new NotImplementedException();
+            bool IsSuccess = false;
+            try
+            {
+                using (var connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@FullName", input.FullName);
+                    parameters.Add("@Tin", input.Tin);
+                    parameters.Add("@Birthdate", input.Birthdate);
+                    parameters.Add("@TypeId", input.TypeId);
+                    parameters.Add("@IsSuccess", dbType: DbType.Boolean, direction: ParameterDirection.Output);
+                    connection.Execute("pr_UpdateEmployee", parameters, commandType: CommandType.StoredProcedure);
+                    IsSuccess = parameters.Get<bool>("@IsSuccess");
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            return IsSuccess;
         }
 
         public bool DeleteEmployee(int id)

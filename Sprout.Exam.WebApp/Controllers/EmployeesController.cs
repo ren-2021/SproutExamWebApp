@@ -50,15 +50,9 @@ namespace Sprout.Exam.WebApp.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(EditEmployeeDto input)
+        public async Task<bool> Put(EditEmployeeDto input)
         {
-            var item = await Task.FromResult(StaticEmployees.ResultList.FirstOrDefault(m => m.Id == input.Id));
-            if (item == null) return NotFound();
-            item.FullName = input.FullName;
-            item.Tin = input.Tin;
-            item.Birthdate = input.Birthdate.ToString("yyyy-MM-dd");
-            item.TypeId = input.TypeId;
-            return Ok(item);
+            return await Task.FromResult<bool>(this.employeeService.Update(input));
         }
 
         /// <summary>
