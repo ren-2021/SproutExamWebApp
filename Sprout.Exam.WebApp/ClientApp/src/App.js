@@ -20,7 +20,7 @@ export default class App extends Component {
   render () {
     return (
       <Layout>
-        <Route exact path='/' component={EmployeesIndex} />
+            <Route exact path='/' component={Home} />
         <Route path='/counter' component={Counter} />
         <AuthorizeRoute path='/fetch-data' component={FetchData} />
         <AuthorizeRoute path='/employees/index' component={EmployeesIndex} />

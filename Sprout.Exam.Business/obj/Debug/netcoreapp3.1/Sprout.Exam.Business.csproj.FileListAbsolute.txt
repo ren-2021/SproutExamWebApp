@@ -23,3 +23,17 @@ C:\Users\Rendel\Desktop\Exam\Sprout\Sprout.Exam.WebApp\Sprout.Exam.WebApp\Sprout
 C:\Users\Rendel\Desktop\Exam\Sprout\Sprout.Exam.WebApp\Sprout.Exam.WebApp\Sprout.Exam.Business\obj\Debug\netcoreapp3.1\Sprout.Exam.Business.csproj.CopyComplete
 C:\Users\Rendel\Desktop\Exam\Sprout\Sprout.Exam.WebApp\Sprout.Exam.WebApp\Sprout.Exam.Business\obj\Debug\netcoreapp3.1\Sprout.Exam.Business.dll
 C:\Users\Rendel\Desktop\Exam\Sprout\Sprout.Exam.WebApp\Sprout.Exam.WebApp\Sprout.Exam.Business\obj\Debug\netcoreapp3.1\Sprout.Exam.Business.pdb
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Business\bin\Debug\netcoreapp3.1\Sprout.Exam.Business.deps.json
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Business\bin\Debug\netcoreapp3.1\Sprout.Exam.Business.dll
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Business\bin\Debug\netcoreapp3.1\Sprout.Exam.Business.pdb
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Business\bin\Debug\netcoreapp3.1\Sprout.Exam.Common.dll
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Business\bin\Debug\netcoreapp3.1\Sprout.Exam.Common.pdb
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Business\obj\Debug\netcoreapp3.1\Sprout.Exam.Business.csproj.AssemblyReference.cache
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Business\obj\Debug\netcoreapp3.1\Sprout.Exam.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Business\obj\Debug\netcoreapp3.1\Sprout.Exam.Business.AssemblyInfoInputs.cache
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Business\obj\Debug\netcoreapp3.1\Sprout.Exam.Business.AssemblyInfo.cs
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Business\obj\Debug\netcoreapp3.1\Sprout.Exam.Business.csproj.CoreCompileInputs.cache
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Business\obj\Debug\netcoreapp3.1\Sprout.Exam.Business.sourcelink.json
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Business\obj\Debug\netcoreapp3.1\Sprout.Exam.Business.csproj.CopyComplete
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Business\obj\Debug\netcoreapp3.1\Sprout.Exam.Business.dll
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Business\obj\Debug\netcoreapp3.1\Sprout.Exam.Business.pdb

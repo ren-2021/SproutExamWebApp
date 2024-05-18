@@ -16,3 +16,13 @@ C:\Users\Rendel\Desktop\Exam\Sprout\Sprout.Exam.WebApp\Sprout.Exam.WebApp\Sprout
 C:\Users\Rendel\Desktop\Exam\Sprout\Sprout.Exam.WebApp\Sprout.Exam.WebApp\Sprout.Exam.Common\obj\Debug\netcoreapp3.1\Sprout.Exam.Common.csproj.CoreCompileInputs.cache
 C:\Users\Rendel\Desktop\Exam\Sprout\Sprout.Exam.WebApp\Sprout.Exam.WebApp\Sprout.Exam.Common\obj\Debug\netcoreapp3.1\Sprout.Exam.Common.dll
 C:\Users\Rendel\Desktop\Exam\Sprout\Sprout.Exam.WebApp\Sprout.Exam.WebApp\Sprout.Exam.Common\obj\Debug\netcoreapp3.1\Sprout.Exam.Common.pdb
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Common\bin\Debug\netcoreapp3.1\Sprout.Exam.Common.deps.json
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Common\bin\Debug\netcoreapp3.1\Sprout.Exam.Common.dll
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Common\bin\Debug\netcoreapp3.1\Sprout.Exam.Common.pdb
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Common\obj\Debug\netcoreapp3.1\Sprout.Exam.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Common\obj\Debug\netcoreapp3.1\Sprout.Exam.Common.AssemblyInfoInputs.cache
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Common\obj\Debug\netcoreapp3.1\Sprout.Exam.Common.AssemblyInfo.cs
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Common\obj\Debug\netcoreapp3.1\Sprout.Exam.Common.csproj.CoreCompileInputs.cache
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Common\obj\Debug\netcoreapp3.1\Sprout.Exam.Common.sourcelink.json
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Common\obj\Debug\netcoreapp3.1\Sprout.Exam.Common.dll
+C:\Users\Rendel\Desktop\Exam\Sprout\SproutExamWebApp\Sprout.Exam.Common\obj\Debug\netcoreapp3.1\Sprout.Exam.Common.pdb

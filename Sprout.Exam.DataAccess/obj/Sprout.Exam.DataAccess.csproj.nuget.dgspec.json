@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rendel\\Desktop\\Exam\\Sprout\\Sprout.Exam.WebApp\\Sprout.Exam.WebApp\\Sprout.Exam.DataAccess\\Sprout.Exam.DataAccess.csproj": {}
+    "C:\\Users\\Rendel\\Desktop\\Exam\\Sprout\\SproutExamWebApp\\Sprout.Exam.DataAccess\\Sprout.Exam.DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rendel\\Desktop\\Exam\\Sprout\\Sprout.Exam.WebApp\\Sprout.Exam.WebApp\\Sprout.Exam.DataAccess\\Sprout.Exam.DataAccess.csproj": {
+    "C:\\Users\\Rendel\\Desktop\\Exam\\Sprout\\SproutExamWebApp\\Sprout.Exam.DataAccess\\Sprout.Exam.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rendel\\Desktop\\Exam\\Sprout\\Sprout.Exam.WebApp\\Sprout.Exam.WebApp\\Sprout.Exam.DataAccess\\Sprout.Exam.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Rendel\\Desktop\\Exam\\Sprout\\SproutExamWebApp\\Sprout.Exam.DataAccess\\Sprout.Exam.DataAccess.csproj",
         "projectName": "Sprout.Exam.DataAccess",
-        "projectPath": "C:\\Users\\Rendel\\Desktop\\Exam\\Sprout\\Sprout.Exam.WebApp\\Sprout.Exam.WebApp\\Sprout.Exam.DataAccess\\Sprout.Exam.DataAccess.csproj",
+        "projectPath": "C:\\Users\\Rendel\\Desktop\\Exam\\Sprout\\SproutExamWebApp\\Sprout.Exam.DataAccess\\Sprout.Exam.DataAccess.csproj",
         "packagesPath": "C:\\Users\\Rendel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rendel\\Desktop\\Exam\\Sprout\\Sprout.Exam.WebApp\\Sprout.Exam.WebApp\\Sprout.Exam.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\Rendel\\Desktop\\Exam\\Sprout\\SproutExamWebApp\\Sprout.Exam.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

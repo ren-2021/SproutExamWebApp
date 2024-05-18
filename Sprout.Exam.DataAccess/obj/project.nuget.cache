@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AOnT+zQ6xBSVWNOFrG5V2mrOFXkEEK4SDTOovDR/RqAnHsvYWrQs/i0nikj8LpzZaSac+Y1qQ/eO753aG7yWxw==",
+  "dgSpecHash": "HdPmXkKzJHPnNVF5fLo9N/MSGM1Rxdo/wg3GF05l8EdpSeKbMP/ZE2Is/YePcCp6E8/MGf6Hr0DvqsAg0NySXA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rendel\\Desktop\\Exam\\Sprout\\Sprout.Exam.WebApp\\Sprout.Exam.WebApp\\Sprout.Exam.DataAccess\\Sprout.Exam.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\Rendel\\Desktop\\Exam\\Sprout\\SproutExamWebApp\\Sprout.Exam.DataAccess\\Sprout.Exam.DataAccess.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
