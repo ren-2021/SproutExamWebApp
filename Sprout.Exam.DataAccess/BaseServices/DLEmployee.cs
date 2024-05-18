@@ -72,7 +72,26 @@ namespace Sprout.Exam.DataAccess.BaseServices
 
         public bool DeleteEmployee(int id)
         {
-            throw new NotImplementedException();
+            bool IsSuccess = false;
+            try
+            {
+                using (var connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@Id", id);
+                    parameters.Add("@IsSuccess", dbType: DbType.Boolean, direction: ParameterDirection.Output);
+                    connection.Execute("pr_DeleteEmployee", parameters, commandType: CommandType.StoredProcedure);
+                    IsSuccess = parameters.Get<bool>("@IsSuccess");
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            return IsSuccess;
         }
 
         public decimal Calculate(int id, decimal absentDays, decimal workedDays)
