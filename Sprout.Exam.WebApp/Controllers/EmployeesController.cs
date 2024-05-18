@@ -28,10 +28,10 @@ namespace Sprout.Exam.WebApp.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IEnumerable<EmployeeDto>> Get()
         {
-            var result = await Task.FromResult(StaticEmployees.ResultList);
-            return Ok(result);
+            var result = await Task.FromResult<IEnumerable<EmployeeDto>>(this.employeeService.Get());
+            return result;
         }
 
         /// <summary>
@@ -39,10 +39,10 @@ namespace Sprout.Exam.WebApp.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<EmployeeDto> GetById(int id)
         {
-            var result = await Task.FromResult(StaticEmployees.ResultList.FirstOrDefault(m => m.Id == id));
-            return Ok(result);
+            var result = await Task.FromResult<EmployeeDto>(this.employeeService.GetById(id));
+            return result;
         }
 
         /// <summary>

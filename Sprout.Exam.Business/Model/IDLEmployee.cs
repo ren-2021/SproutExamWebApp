@@ -9,7 +9,8 @@ namespace Sprout.Exam.DataAccess.BaseServices
     {
         public bool AddEmployee(CreateEmployeeDto input);
 
-        public EmployeeDto GetEmployees(int id);
+        public List<EmployeeDto> GetEmployees();
+        public EmployeeDto GetEmployeeById(int id);
 
         public bool UpdateEmployees(EditEmployeeDto input);
 

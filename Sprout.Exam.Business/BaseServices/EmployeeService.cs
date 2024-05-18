@@ -18,9 +18,14 @@ namespace Sprout.Exam.Business.BaseServices
             return this.DLEmployee.AddEmployee(input);
         }
 
-        public EmployeeDto Get(int id)
+        public List<EmployeeDto> Get()
         {
-            return this.DLEmployee.GetEmployees(id);
+            return this.DLEmployee.GetEmployees();
+        }
+
+        public EmployeeDto GetById(int id)
+        {
+            return this.DLEmployee.GetEmployeeById(id);
         }
 
         public bool Update(EditEmployeeDto input)
@@ -37,7 +42,5 @@ namespace Sprout.Exam.Business.BaseServices
         {
             return this.DLEmployee.Calculate(id, absentDays, workedDays);
         }
-
-     
     }
 }

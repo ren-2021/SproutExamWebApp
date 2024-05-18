@@ -10,7 +10,8 @@ namespace Sprout.Exam.Business.BaseServices
     {
         public bool Add(CreateEmployeeDto input);
 
-        public EmployeeDto Get(int id);
+        public List<EmployeeDto> Get();
+        public EmployeeDto GetById(int id);
 
         public bool Update(EditEmployeeDto input);
 
