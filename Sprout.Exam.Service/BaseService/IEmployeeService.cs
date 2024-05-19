@@ -4,11 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sprout.Exam.Business.BaseServices
+namespace Sprout.Exam.Service.BaseServices
 {
     public interface IEmployeeService
     {
-        public bool Add(CreateEmployeeDto input);
+        public (bool, int) Add(CreateEmployeeDto input);
 
         public List<EmployeeDto> Get();
         public EmployeeDto GetById(int id);

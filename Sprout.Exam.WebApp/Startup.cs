@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Sprout.Exam.Business.BaseServices;
+using Sprout.Exam.Service.BaseServices;
 using Sprout.Exam.WebApp.Data;
 using Sprout.Exam.WebApp.Models;
 

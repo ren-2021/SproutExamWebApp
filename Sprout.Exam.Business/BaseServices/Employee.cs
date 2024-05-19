@@ -13,7 +13,7 @@ namespace Sprout.Exam.Business.BaseServices
 
         }
 
-        public bool Add(CreateEmployeeDto input)
+        public (bool, int) Add(CreateEmployeeDto input)
         {
             return this.DLEmployee.AddEmployee(input);
         }
@@ -30,7 +30,7 @@ namespace Sprout.Exam.Business.BaseServices
 
         public bool Update(EditEmployeeDto input)
         {
-            return this.DLEmployee.UpdateEmployees(input);
+            return this.DLEmployee.UpdateEmployee(input);
         }
 
         public bool Delete(int id)

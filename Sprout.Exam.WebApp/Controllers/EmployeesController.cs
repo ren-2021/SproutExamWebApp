@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Sprout.Exam.Common.Enums;
 using Sprout.Exam.Business.Model;
-using Sprout.Exam.Business.BaseServices;
+using Sprout.Exam.Service.BaseServices;
+using Sprout.Exam.WebApp.Models;
 
 namespace Sprout.Exam.WebApp.Controllers
 {
@@ -18,7 +19,7 @@ namespace Sprout.Exam.WebApp.Controllers
     {
         private IEmployeeService employeeService;
 
-        public EmployeesController(EmployeeService employeeService)
+        public EmployeesController(IEmployeeService employeeService)
         {
             this.employeeService = employeeService;
         }
@@ -50,57 +51,51 @@ namespace Sprout.Exam.WebApp.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPut("{id}")]
-        public async Task<bool> Put(EditEmployeeDto input)
+        public async Task<IActionResult> Put(EditEmployeeDto input)
         {
-            return await Task.FromResult<bool>(this.employeeService.Update(input));
+            var result = await Task.FromResult<bool>(this.employeeService.Update(input));
+            return Ok(result);
         }
 
-        /// <summary>
-        /// Refactor this method to go through proper layers and insert employees to the DB.
-        /// </summary>
-        /// <returns></returns>
+        ///// <summary>
+        ///// Refactor this method to go through proper layers and insert employees to the DB.
+        ///// </summary>
+        ///// <returns></returns>
         [HttpPost]
-        public async Task<bool> Post(CreateEmployeeDto input)
+        public async Task<IActionResult> Post(CreateEmployeeDto input)
         {
-           return await Task.FromResult<bool>(this.employeeService.Add(input));
-        }
-
-        /// <summary>
-        /// Refactor this method to go through proper layers and perform soft deletion of an employee to the DB.
-        /// </summary>
-        /// <returns></returns>
-        [HttpDelete("{id}")]
-        public async Task<bool> Delete(int id)
-        {
-            return await Task.FromResult<bool>(this.employeeService.Delete(id));
-        }
-
-        /// <summary>
-        /// Refactor this method to go through proper layers and use Factory pattern
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="absentDays"></param>
-        /// <param name="workedDays"></param>
-        /// <returns></returns>
-        [HttpPost("{id}/calculate")]
-        public async Task<IActionResult> Calculate(int id,decimal absentDays,decimal workedDays)
-        {
-            var result = await Task.FromResult(StaticEmployees.ResultList.FirstOrDefault(m => m.Id == id));
-
-            if (result == null) return NotFound();
-            var type = (EmployeeType) result.TypeId;
-            return type switch
+            var result = await Task.FromResult<(bool isSuccess, int id)>(this.employeeService.Add(input));
+            if (result.isSuccess == false)
             {
-                EmployeeType.Regular =>
-                    //create computation for regular.
-                    Ok(25000),
-                EmployeeType.Contractual =>
-                    //create computation for contractual.
-                    Ok(20000),
-                _ => NotFound("Employee Type not found")
-            };
-
+                return BadRequest();
+            }
+            return Created($"/api/employees/{result.id}", result.id);
         }
 
+        ///// <summary>
+        ///// Refactor this method to go through proper layers and perform soft deletion of an employee to the DB.
+        ///// </summary>
+        ///// <returns></returns>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await Task.FromResult<bool>(this.employeeService.Delete(id));
+            return Ok(result);
+        }
+
+        ///// <summary>
+        ///// Refactor this method to go through proper layers and use Factory pattern
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <param name="absentDays"></param>
+        ///// <param name="workedDays"></param>
+        ///// <returns></returns>
+        [HttpPost("{id}/calculate")]
+        public async Task<IActionResult> Calculate([FromBody] CalculationData calData)
+        {
+            //I use stored procedure instead of application code in calculating Salary for scalability and centralization
+            var result = await Task.FromResult<decimal>(this.employeeService.Compute(calData.Id, calData.AbsentDays, calData.WorkedDays));
+            return Ok(result);
+        }
     }
 }

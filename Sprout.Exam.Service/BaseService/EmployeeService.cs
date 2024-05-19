@@ -1,15 +1,16 @@
-﻿using Sprout.Exam.Business.DataAccess;
+﻿using Sprout.Exam.Business.BaseServices;
+using Sprout.Exam.Business.DataAccess;
 using Sprout.Exam.Business.Model;
 using Sprout.Exam.DataAccess.BaseServices;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sprout.Exam.Business.BaseServices
+namespace Sprout.Exam.Service.BaseServices
 {
     public class EmployeeService : IEmployeeService
     {
-        private Employee employee;
+        private IEmployee employee;
         private IDataAccess dataAccess;
 
         public EmployeeService()
@@ -18,7 +19,7 @@ namespace Sprout.Exam.Business.BaseServices
             this.employee = new Employee(dataAccess);
         }
 
-        public bool Add(CreateEmployeeDto input)
+        public (bool, int) Add(CreateEmployeeDto input)
         {
             return this.employee.Add(input);
         }

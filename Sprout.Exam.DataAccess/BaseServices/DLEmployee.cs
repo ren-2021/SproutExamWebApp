@@ -13,9 +13,9 @@ namespace Sprout.Exam.DataAccess.BaseServices
 {
     public class DLEmployee : DLBaseDataAccess, IDataAccess, IDLEmployee
     {
-        public bool AddEmployee(CreateEmployeeDto input)
+        public (bool, int) AddEmployee(CreateEmployeeDto input)
         {
-            bool IsSuccess = false;
+            (bool IsSuccess, int Id) result = (false, 0);
             try
             {
                 using (var connection = new SqlConnection(ConnectionString))
@@ -27,17 +27,15 @@ namespace Sprout.Exam.DataAccess.BaseServices
                     parameters.Add("@Tin", input.Tin);
                     parameters.Add("@Birthdate", input.Birthdate);
                     parameters.Add("@TypeId", input.TypeId);
-                    parameters.Add("@IsSuccess", dbType: DbType.Boolean, direction: ParameterDirection.Output);
-                    connection.Execute("pr_CreateEmployee", parameters, commandType: CommandType.StoredProcedure);
-                    IsSuccess = parameters.Get<bool>("@IsSuccess");
+                    result = connection.Query<(bool, int)>("pr_CreateEmployee", parameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
                 }
             }
             catch (Exception ex)
             {
-                return false;
+                return result;
             }
 
-            return IsSuccess;
+            return result;
         }
 
         public List<EmployeeDto> GetEmployees()
@@ -79,7 +77,7 @@ namespace Sprout.Exam.DataAccess.BaseServices
             return result;
         }
 
-        public bool UpdateEmployees(EditEmployeeDto input)
+        public bool UpdateEmployee(EditEmployeeDto input)
         {
             bool IsSuccess = false;
             try
@@ -89,6 +87,7 @@ namespace Sprout.Exam.DataAccess.BaseServices
                     connection.Open();
 
                     var parameters = new DynamicParameters();
+                    parameters.Add("@Id", input.Id);
                     parameters.Add("@FullName", input.FullName);
                     parameters.Add("@Tin", input.Tin);
                     parameters.Add("@Birthdate", input.Birthdate);
@@ -132,7 +131,27 @@ namespace Sprout.Exam.DataAccess.BaseServices
 
         public decimal Calculate(int id, decimal absentDays, decimal workedDays)
         {
-            throw new NotImplementedException();
+            decimal totalcompute;
+            try
+            {
+                using (var connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+                    var parameters = new DynamicParameters();
+                    totalcompute = connection.Query<decimal>("pr_CalculateEmployeeSalary", 
+                        new { 
+                            Id = id,
+                            AbsentDays = absentDays,
+                            WorkedDays = workedDays
+                        }, 
+                        commandType: CommandType.StoredProcedure).FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return totalcompute;
         }
     }
 }
