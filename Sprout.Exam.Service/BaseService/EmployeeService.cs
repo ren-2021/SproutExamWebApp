@@ -19,7 +19,7 @@ namespace Sprout.Exam.Service.BaseServices
             this.employee = new Employee(dataAccess);
         }
 
-        public (bool, int) Add(CreateEmployeeDto input)
+        public (bool, int, int) Add(CreateEmployeeDto input)
         {
             return this.employee.Add(input);
         }
@@ -34,7 +34,7 @@ namespace Sprout.Exam.Service.BaseServices
             return this.employee.GetById(id);
         }
 
-        public bool Update(EditEmployeeDto input)
+        public (bool, int) Update(EditEmployeeDto input)
         {
             return this.employee.Update(input);
         }

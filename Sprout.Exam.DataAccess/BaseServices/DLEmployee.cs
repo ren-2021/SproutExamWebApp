@@ -13,9 +13,9 @@ namespace Sprout.Exam.DataAccess.BaseServices
 {
     public class DLEmployee : DLBaseDataAccess, IDataAccess, IDLEmployee
     {
-        public (bool, int) AddEmployee(CreateEmployeeDto input)
+        public (bool, int, int) AddEmployee(CreateEmployeeDto input)
         {
-            (bool IsSuccess, int Id) result = (false, 0);
+            (bool IsSuccess, int Id, int ErrorCode) result = (false, 0, 500);
             try
             {
                 using (var connection = new SqlConnection(ConnectionString))
@@ -27,7 +27,7 @@ namespace Sprout.Exam.DataAccess.BaseServices
                     parameters.Add("@Tin", input.Tin);
                     parameters.Add("@Birthdate", input.Birthdate);
                     parameters.Add("@TypeId", input.TypeId);
-                    result = connection.Query<(bool, int)>("pr_CreateEmployee", parameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                    result = connection.Query<(bool, int, int)>("pr_CreateEmployee", parameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
                 }
             }
             catch (Exception ex)

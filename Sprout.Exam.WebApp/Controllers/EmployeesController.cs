@@ -53,7 +53,11 @@ namespace Sprout.Exam.WebApp.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(EditEmployeeDto input)
         {
-            var result = await Task.FromResult<bool>(this.employeeService.Update(input));
+            var result = await Task.FromResult<(bool isSuccess, int Error)>(this.employeeService.Update(input));
+            if(result.isSuccess == false)
+            {
+                return StatusCode(result.Error);
+            }
             return Ok(result);
         }
 
@@ -64,10 +68,10 @@ namespace Sprout.Exam.WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(CreateEmployeeDto input)
         {
-            var result = await Task.FromResult<(bool isSuccess, int id)>(this.employeeService.Add(input));
+            var result = await Task.FromResult<(bool isSuccess, int id, int Error)>(this.employeeService.Add(input));
             if (result.isSuccess == false)
             {
-                return BadRequest();
+                return StatusCode(result.Error);
             }
             return Created($"/api/employees/{result.id}", result.id);
         }

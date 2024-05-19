@@ -81,6 +81,10 @@ export class EmployeeCreate extends Component {
         alert("Employee successfully saved");
         this.props.history.push("/employees/index");
     }
+    else if (response.status === 422) {
+        this.setState({ loadingSave: false });
+        alert("Invalid Input.");
+    }
     else{
         alert("There was an error occured.");
     }

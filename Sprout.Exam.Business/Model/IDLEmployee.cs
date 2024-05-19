@@ -7,7 +7,7 @@ namespace Sprout.Exam.DataAccess.BaseServices
 {
     public interface IDLEmployee
     {
-        public (bool, int) AddEmployee(CreateEmployeeDto input);
+        public (bool, int, int) AddEmployee(CreateEmployeeDto input);
 
         public List<EmployeeDto> GetEmployees();
         public EmployeeDto GetEmployeeById(int id);

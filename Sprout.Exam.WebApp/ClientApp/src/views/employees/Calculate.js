@@ -76,7 +76,7 @@ export class EmployeeCalculate extends Component {
 
 <div className="form-row">
 <div className='form-group col-md-12'>
-  <label>Net Income: <b>{this.state.netIncome}</b></label>
+  <label>Net Income: <b>{this.state.netIncome.toFixed(2)}</b></label>
 </div>
 </div>
 

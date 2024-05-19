@@ -8,13 +8,20 @@ namespace Sprout.Exam.Business.BaseServices
 {
     public class Employee : BaseDataAccess, IEmployee
     {
+        private bool isValid;
         public Employee(IDataAccess pDataAccess) : base(pDataAccess)
         {
 
         }
 
-        public (bool, int) Add(CreateEmployeeDto input)
+        public (bool, int, int) Add(CreateEmployeeDto input)
         {
+            isValid = true;
+            this.Validation(input);
+            if (isValid == false)
+            {
+                return (false, 0, 422);
+            }
             return this.DLEmployee.AddEmployee(input);
         }
 
@@ -28,9 +35,21 @@ namespace Sprout.Exam.Business.BaseServices
             return this.DLEmployee.GetEmployeeById(id);
         }
 
-        public bool Update(EditEmployeeDto input)
+        public (bool, int) Update(EditEmployeeDto input)
         {
-            return this.DLEmployee.UpdateEmployee(input);
+            isValid = true;
+            var isSuccess = false;
+            this.Validation(input);
+            if (isValid == false)
+            {
+                return (false, 422);
+            }
+            isSuccess = this.DLEmployee.UpdateEmployee(input);
+            if(!isSuccess)
+            {
+                return (false, 422);
+            }
+            return (isSuccess, 200);
         }
 
         public bool Delete(int id)
@@ -41,6 +60,20 @@ namespace Sprout.Exam.Business.BaseServices
         public decimal Compute(int id, decimal absentDays, decimal workedDays)
         {
             return this.DLEmployee.Calculate(id, absentDays, workedDays);
+        }
+
+        private void Validation(BaseSaveEmployeeDto input)
+        {
+            DateTime minValue = Convert.ToDateTime("1-1-1753 12:00:00");
+            DateTime maxValue = DateTime.MaxValue;
+            if (input == null || string.IsNullOrEmpty(input.FullName) || string.IsNullOrEmpty(input.Tin) || input.Birthdate == null)
+            {
+                isValid = false;
+            }
+            if (input.Birthdate < minValue || input.Birthdate > maxValue)
+            {
+                isValid = false;
+            }
         }
     }
 }
