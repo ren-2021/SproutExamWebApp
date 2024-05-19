@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sprout.Exam.Common")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b53a02017bb87dd24f5a9126d2a45f67e8c4908")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05df011604f0a60ecab50ad306b104c0a908b596")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sprout.Exam.Common")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sprout.Exam.Common")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
