@@ -2,9 +2,21 @@
 
 Before Starting the app
 ToDo:
-run: 
-npm install --force
-npm audit fix --force
+
+Database:
+Run all the Scripts:
+https://github.com/ren-2021/SproutExamDatabase
+
+Run: 
+npm install
+
+If you encounter an client error:
+- Remove node_modules
+- Remove package-lock.json
+- run npm install
+
+
+
 
 If we are going to deploy this on production, what do you think is the next
 improvement that you will prioritize next? This can be a feature, a tech debt, or
