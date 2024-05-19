@@ -1,30 +1,23 @@
 {
   "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v3.1",
+    "name": ".NETCoreApp,Version=v5.0",
     "signature": ""
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
-      "Sprout.Exam.DataAccess/1.0.0": {
+    ".NETCoreApp,Version=v5.0": {
+      "Sprout.Exam.Service/1.0.0": {
         "dependencies": {
-          "Dapper": "2.1.35",
-          "Microsoft.Extensions.Configuration": "8.0.0",
-          "Microsoft.Extensions.Configuration.Json": "8.0.0",
-          "Microsoft.SqlServer.Server": "1.0.0",
           "Sprout.Exam.Business": "1.0.0",
-          "System.Data.SqlClient": "4.8.6"
+          "Sprout.Exam.DataAccess": "1.0.0"
         },
         "runtime": {
-          "Sprout.Exam.DataAccess.dll": {}
+          "Sprout.Exam.Service.dll": {}
         }
       },
       "Dapper/2.1.35": {
-        "dependencies": {
-          "System.Reflection.Emit.Lightweight": "4.7.0"
-        },
         "runtime": {
-          "lib/netstandard2.0/Dapper.dll": {
+          "lib/net5.0/Dapper.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.1.35.13827"
           }
@@ -213,7 +206,6 @@
         }
       },
       "System.Memory/4.5.5": {},
-      "System.Reflection.Emit.Lightweight/4.7.0": {},
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "runtime": {
           "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {
@@ -271,11 +263,24 @@
         "runtime": {
           "Sprout.Exam.Common.dll": {}
         }
+      },
+      "Sprout.Exam.DataAccess/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.1.35",
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Configuration.Json": "8.0.0",
+          "Microsoft.SqlServer.Server": "1.0.0",
+          "Sprout.Exam.Business": "1.0.0",
+          "System.Data.SqlClient": "4.8.6"
+        },
+        "runtime": {
+          "Sprout.Exam.DataAccess.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "Sprout.Exam.DataAccess/1.0.0": {
+    "Sprout.Exam.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -420,13 +425,6 @@
       "path": "system.memory/4.5.5",
       "hashPath": "system.memory.4.5.5.nupkg.sha512"
     },
-    "System.Reflection.Emit.Lightweight/4.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-a4OLB4IITxAXJeV74MDx49Oq2+PsF6Sml54XAFv+2RyWwtDBcabzoxiiJRhdhx+gaohLh4hEGCLQyBozXoQPqA==",
-      "path": "system.reflection.emit.lightweight/4.7.0",
-      "hashPath": "system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
-    },
     "System.Runtime.CompilerServices.Unsafe/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -475,6 +473,11 @@
       "sha512": ""
     },
     "Sprout.Exam.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Sprout.Exam.DataAccess/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
